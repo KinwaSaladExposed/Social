@@ -1,0 +1,21 @@
+.Me {
+	display: grid;
+	grid-template-columns: 3fr 9fr;
+	grid-gap: 10px;
+}
+.Me img {
+	width: 100%;
+}
+
+.Posts {
+	padding: 10px;
+	margin: 10px;
+	border-radius: 10px;
+}
+.Posts img {
+	width: 40px;
+	padding: 5px;
+}
+.OnePost {
+	margin: 20px 0;
+}
