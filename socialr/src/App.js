@@ -9,9 +9,11 @@ function App() {
     <div className="Wrapper">
     <Header />
     <Nav />
-    <Content />
+    <Content name={"Arnold Schawrtznegger"}/>
     </div>
   );
 }
 
 export default App;
+
+///read what props are in react
