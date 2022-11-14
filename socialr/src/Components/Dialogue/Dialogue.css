@@ -1,0 +1,51 @@
+*{margin: 0; padding: 0; box-sizing: border-box;}
+
+.da {
+	height: 400px;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	
+}
+
+.ChatBox {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	width: 40%;
+	
+
+	margin: 0 auto;
+
+	align-items: flex-start;
+}
+.Name {
+
+}
+.vl {
+	width: 5px;
+	background-color: black;
+	align-self: stretch;
+}
+.Message {
+	background-color: rgba(255, 255, 255, 0.2);
+	padding: 15px;
+}
+
+.SendMSG {
+	margin: 0 auto;
+}
+.EnterMessage {
+
+}
+.SendBtn {
+
+}
+.NL {
+	text-decoration: none;
+	color: white;
+
+	width: 40%;
+	align-items: center;
+}
