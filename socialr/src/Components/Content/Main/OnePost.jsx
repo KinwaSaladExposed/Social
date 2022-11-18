@@ -1,5 +1,6 @@
 import React from 'react'
 import arnold2 from '../../../img/pparnold.jpg'
+import './OP.css';
 
 function OP(props) {
 	return(
@@ -8,7 +9,7 @@ function OP(props) {
 
  	 	<span>Arnold Schwarzenegger</span>
 
-  		<p>{props.message}</p>
+  		<p>{props.message} <span className="L">{props.like}</span></p>
 	</div>
 	)
 }

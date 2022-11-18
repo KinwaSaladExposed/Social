@@ -6,16 +6,16 @@ import Content from "./Components/Content/Content"
 import Dialogue from "./Components/Dialogue/Dialogue"
 import {BrowserRouter, Route, Switch} from "react-router-dom"
 
-function App() {
+function App(props) {
   return (
     <div className="Wrapper">
     <BrowserRouter>
     <Header />
     <Nav />
     <Switch>
-    <Route exact path='/' component={Content} />
-    <Route exact path='/ct' component={Content} />
-    <Route exact path='/da' component={Dialogue} />
+    <Route exact path='/' render={()=><Content />} />
+    <Route exact path='/ct' render={()=><Content PMsg={props.PMsg}/>} />
+    <Route exact path='/da' render={()=><Dialogue Dialogue_Names={props.Dialogue_Names} Message_Obj={props.Message_Obj}/>} />
     </Switch>
     </BrowserRouter>
     </div>

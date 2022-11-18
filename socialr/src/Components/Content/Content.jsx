@@ -7,9 +7,10 @@ import Me from './Me/Me'
 function Content(props) {
   return (
     <div className="ct">
-        <Me name={props.name}/>
-        <Posts message={props.message} />
+        <Me />
+        <Posts PMsg={props.PMsg} />
     </div>
+    
   );
 }
 
