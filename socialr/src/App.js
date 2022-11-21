@@ -13,9 +13,9 @@ function App(props) {
     <Header />
     <Nav />
     <Switch>
-    <Route exact path='/' render={()=><Content />} />
-    <Route exact path='/ct' render={()=><Content PMsg={props.PMsg}/>} />
-    <Route exact path='/da' render={()=><Dialogue Dialogue_Names={props.Dialogue_Names} Message_Obj={props.Message_Obj}/>} />
+    <Route exact path='/' render={()=><Content PMsg={props.state.Comment.PMsg}/>} />
+    <Route exact path='/ct' render={()=><Content PMsg={props.state.Comment.PMsg}/>} />
+    <Route exact path='/da' render={()=><Dialogue Dialogue_Names={props.state.Dial.Dialogue_Names} Message_Obj={props.state.Dial.Message_Obj}/>} />
     </Switch>
     </BrowserRouter>
     </div>
