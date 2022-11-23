@@ -20,4 +20,12 @@ Comment:{
 ]}
 }
 
+export let createCo = (txt) => {
+    let NewComment = {
+        text:txt,id:4,like:40
+    }
+    state.Comment.PMsg.push(NewComment);
+    console.log(state);
+}
+
 export default state
