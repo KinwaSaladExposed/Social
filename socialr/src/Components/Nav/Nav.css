@@ -10,3 +10,34 @@ a {
 a:hover {
 	background: #fff9;
 }
+
+.Top {
+
+}
+
+.Bottom {
+	display: flex;
+	justify-content: space-evenly;
+	margin-top: 15px;
+}
+
+.FD {
+
+}
+.F1 {
+
+}
+.F2 {
+
+}
+.F3 {
+
+}
+
+.FPicture {
+	width: 25px;
+	height: 25px;
+}
+p {
+	font-size: 14px;
+}

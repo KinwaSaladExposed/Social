@@ -3,7 +3,12 @@ import './Dialogue.css'
 import DI from './DialogueItem/DialogueItem';
 import CM from './ChatMessage';
 
+let MText = React.createRef();
+
 const Dialogue=(props)=> {
+	let postMsg = () => {
+		props.postMsg(MText.current.value);
+	}
 	return(
 		<div className="da">
 
@@ -16,8 +21,8 @@ const Dialogue=(props)=> {
 			
 
 			<div className="SendMSG">
-				<input className="EnterMessage" placeholder="Enter a Message"/>
-				<button className="SendBtn">Send</button>
+				<input className="EnterMessage" placeholder="Enter a Message" ref={MText}/>
+				<button className="SendBtn" onClick={postMsg}>Send</button>
 			</div>
 
 			</div>
