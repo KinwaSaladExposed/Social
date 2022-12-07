@@ -16,7 +16,9 @@ Comment:{
   {message:"Today I started my post",like:400,id:1},
   {message:"Yesterday I finished my post",like:2,id:2},
   {message:"Im taking a break from posting",like:69,id:3}
-]},
+],
+newPosts:"hello"
+},
 
 Friends:{
     FNames:[
@@ -32,6 +34,7 @@ export let createCo = (txt) => {
         message:txt,id:4,like:40
     }
     state.Comment.PMsg.unshift(NewComment);
+    state.Comment.newPosts = "";
     run(state);
 }
 export let postMsg = (text) => {
@@ -39,6 +42,11 @@ export let postMsg = (text) => {
         message:text,id:1
     }
     state.Dial.Message_Obj.push(NewMsg);
+    run(state);
+}
+
+export let OPC = (Otext) => {
+    state.Comment.newPosts = Otext;
     run(state);
 }
 

@@ -12,11 +12,25 @@ function App(props) {
     <div className="Wrapper">
     <BrowserRouter forceRefresh={true}>
     <Header />
-    <Nav />
+    <Nav FNames={props.state.Friends.FNames}/>
     <Switch>
-    <Route exact path='/' render={()=><Content PMsg={props.state.Comment.PMsg} createCo={props.createCo}/>} />
-    <Route exact path='/ct' render={()=><Content PMsg={props.state.Comment.PMsg} createCo={props.createCo}/>} />
-    <Route exact path='/da' render={()=><Dialogue Dialogue_Names={props.state.Dial.Dialogue_Names} Message_Obj={props.state.Dial.Message_Obj} postMsg={props.postMsg}/>} />
+    <Route exact path='/' render={()=><Content 
+    PMsg={props.state.Comment.PMsg} 
+    createCo={props.createCo} newPosts={props.state.Comment.newPosts}
+    OPC={props.OPC}
+    />} />
+
+    <Route exact path='/ct' render={()=><Content 
+    PMsg={props.state.Comment.PMsg} 
+    createCo={props.createCo} newPosts={props.state.Comment.newPosts}
+    OPC={props.OPC}
+    />} />
+
+    <Route exact path='/da' render={()=><Dialogue 
+    Dialogue_Names={props.state.Dial.Dialogue_Names} 
+    Message_Obj={props.state.Dial.Message_Obj} 
+    postMsg={props.postMsg}/>} />
+
     </Switch>
     </BrowserRouter>
     </div>

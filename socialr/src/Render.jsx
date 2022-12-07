@@ -5,6 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {createCo} from './Data/State'
 import {postMsg} from './Data/State'
+import {OPC} from './Data/State'
 
 export let run = (state) => {
 ReactDOM.createRoot(document.getElementById('root')).render(
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
       state={state}
       createCo={createCo}
       postMsg={postMsg}
+      OPC={OPC}
     />
   </React.StrictMode>
 );

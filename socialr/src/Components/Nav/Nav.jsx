@@ -2,10 +2,12 @@ import React from 'react';
 import './Nav.css'
 import {NavLink} from 'react-router-dom'
 import DefaultPP from '../../img/DefaultPP.jpg'
+import msgF from './msg'
 
-function Nav() {
+
+const Nav=(props)=> {
   return (
-    <div className="nv">
+    <div className="nv"> 
       <div className="Top">
         <NavLink to='/ct'>Profile</NavLink>
         <NavLink to='/da'>Message</NavLink>
@@ -15,7 +17,7 @@ function Nav() {
       <div className="Bottom">
         <div className="F1 FD">
           <img src={DefaultPP} className="FPicture" />
-          <p>John</p>
+          {props.FNames.map((e)=><msgF name={e.name} id={e.id} />)}
         </div>
         <div className="F2 FD">
           <img src={DefaultPP} className="FPicture" />
