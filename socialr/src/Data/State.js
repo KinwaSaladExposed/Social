@@ -1,5 +1,3 @@
-import {run} from './../Render'
-
 let state = {
 Dial:{	
 	Dialogue_Names:[
@@ -9,7 +7,8 @@ Dial:{
 ],
 	Message_Obj:[
   
-]},
+], newmsg:"hello"
+},
 
 Comment:{
 	PMsg:[
@@ -48,6 +47,21 @@ export let postMsg = (text) => {
 export let OPC = (Otext) => {
     state.Comment.newPosts = Otext;
     run(state);
+}
+export let NM = (MMtext) => {
+    state.Dial.newmsg = MMtext;
+    run(state);
+}
+
+
+
+
+let run = () => {
+    console.log("Test");
+}
+
+export let subscribe = (observer) => {
+    run = observer;
 }
 
 export default state

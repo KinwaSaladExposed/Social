@@ -6,8 +6,13 @@ import CM from './ChatMessage';
 let MText = React.createRef();
 
 const Dialogue=(props)=> {
+	let sendMsg = () => {
+		let MMtext = MText.current.value;
+		props.postMsg(MMtext);
+	}
+
 	let postMsg = () => {
-		props.postMsg(MText.current.value);
+		props.NM(MText.current.value);
 	}
 	return(
 		<div className="da">
@@ -21,7 +26,7 @@ const Dialogue=(props)=> {
 			
 
 			<div className="SendMSG">
-				<input className="EnterMessage" placeholder="Enter a Message" ref={MText}/>
+				<input className="EnterMessage" placeholder="Enter a Message" ref={MText} onChange={sendMsg} value={props.newmsg}/>
 				<button className="SendBtn" onClick={postMsg}>Send</button>
 			</div>
 

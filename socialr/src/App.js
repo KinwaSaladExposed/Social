@@ -29,7 +29,9 @@ function App(props) {
     <Route exact path='/da' render={()=><Dialogue 
     Dialogue_Names={props.state.Dial.Dialogue_Names} 
     Message_Obj={props.state.Dial.Message_Obj} 
-    postMsg={props.postMsg}/>} />
+    postMsg={props.postMsg}
+    NM={props.NM}
+    />} />
 
     </Switch>
     </BrowserRouter>
