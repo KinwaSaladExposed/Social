@@ -7,13 +7,13 @@ let PText = React.createRef();
 
 const Posts = (props) => {
     let createCo = () => {
-    props.createCo(PText.current.value);
+    props.dispatch({type:'add-post'});
     PText.current.value = "";
     
     }
 
     let OOC = () => {
-        props.OPC(PText.current.value);
+        props.dispatch({type:'Post-Change', text:PText.current.value});
         
     }
     console.log(props);

@@ -3,9 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import {createCo} from './Data/State'
 import {postMsg} from './Data/State'
-import {OPC} from './Data/State'
 import {NM} from './Data/State'
 import store from './Data/State'
 
@@ -16,14 +14,15 @@ ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <App 
       state={state}
-      createCo={store.createCo.bind(store)}
+      dispatch={store.dispatch.bind(store)}
       postMsg={store.postMsg.bind(store)}
-      OPC={store.OPC.bind(store)}
+      
       NM={store.NM.bind(store)}
     />
   </React.StrictMode>
 );
 }
+
 
 run(store.getState());
 store.subscribe(run);

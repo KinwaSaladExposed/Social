@@ -8,7 +8,7 @@ function Content(props) {
   return (
     <div className="ct">
         <Me />
-        <Posts PMsg={props.PMsg} createCo={props.createCo} newPosts={props.newPosts} OPC={props.OPC}/>
+        <Posts PMsg={props.PMsg} newPosts={props.newPosts} dispatch={props.dispatch}/>
     </div>
     
   );

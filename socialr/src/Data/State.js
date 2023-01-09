@@ -1,4 +1,21 @@
 let store = {
+
+    dispatch(action) {
+        if(action.type == "add-post") {
+            let NewComment = {
+                message:this._state.Comment.newPosts,id:4,like:40
+            }
+            this._state.Comment.PMsg.unshift(NewComment)
+            this._state.Comment.newPosts = ""
+            this.run(this._state)
+        }
+        else if(action.type == "Post-Change") {
+            //this._state.Comment.newPosts = message;
+            this.run(this._state);
+            this._state.Comment.newPosts = action.text;
+        }
+    },
+
    _state: {
     Dial:{  
         Dialogue_Names:[
@@ -29,14 +46,6 @@ let store = {
     }
     },
 
-    createCo(txt) {
-        let NewComment = {
-            message:txt,id:4,like:40
-        }
-        this._state.Comment.PMsg.unshift(NewComment)
-        this._state.Comment.newPosts = ""
-        this.run(this._state)
-    },
     postMsg(text) {
         let NewMsg = {
             message:text,id:1
@@ -45,10 +54,6 @@ let store = {
         this.run(this._state)
     },
 
-    OPC(Otext) {
-        this._state.Comment.newPosts = Otext
-        this.run(this._state)
-    },
     NM(MMtext) {
         this._state.Dial.newmsg = MMtext
         this.run(this._state)

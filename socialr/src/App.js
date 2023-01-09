@@ -16,14 +16,14 @@ function App(props) {
     <Switch>
     <Route exact path='/' render={()=><Content 
     PMsg={props.state.Comment.PMsg} 
-    createCo={props.createCo} newPosts={props.state.Comment.newPosts}
-    OPC={props.OPC}
+    newPosts={props.state.Comment.newPosts}
+    dispatch={props.dispatch}
     />} />
 
     <Route exact path='/ct' render={()=><Content 
     PMsg={props.state.Comment.PMsg} 
-    createCo={props.createCo} newPosts={props.state.Comment.newPosts}
-    OPC={props.OPC}
+    newPosts={props.state.Comment.newPosts}
+    dispatch={props.dispatch}
     />} />
 
     <Route exact path='/da' render={()=><Dialogue 
