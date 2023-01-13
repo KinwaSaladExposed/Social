@@ -1,18 +1,20 @@
+import Reducer from './ContentReducer.js'
+
 let store = {
 
     dispatch(action) {
-        if(action.type == "add-post") {
-            let NewComment = {
-                message:this._state.Comment.newPosts,id:4,like:40
-            }
-            this._state.Comment.PMsg.unshift(NewComment)
-            this._state.Comment.newPosts = ""
-            this.run(this._state)
+        this._state.Comment = Reducer(this._state.Comment, action);
+        this.run(this._state); 
+        if(action.type == "add-msg") {
+            let NewMsg = {
+            message:this._state.Dial.Dialogue_Names.newmsg,id:1
         }
-        else if(action.type == "Post-Change") {
-            //this._state.Comment.newPosts = message;
-            this.run(this._state);
-            this._state.Comment.newPosts = action.text;
+        this._state.Dial.Message_Obj.unshift(NewMsg)
+        this.run(this._state)
+        }
+        else if(action.type == "msg-change") {
+            this._state.Dial.Dialogue_Names.newmsg = action.text
+            this.run(this._state)
         }
     },
 
@@ -24,7 +26,9 @@ let store = {
       {name:"Mr. Very Cool",id:3}
     ],
         Message_Obj:[
-      
+      {message:"Hello", id:1},
+      {message:"Hi", id:2},
+      {message:"how have u been?", id:3}
     ], newmsg:"hello"
     },
 
@@ -46,22 +50,7 @@ let store = {
     }
     },
 
-    postMsg(text) {
-        let NewMsg = {
-            message:text,id:1
-        }
-        this._state.Dial.Message_Obj.push(NewMsg)
-        this.run(this._state)
-    },
-
-    NM(MMtext) {
-        this._state.Dial.newmsg = MMtext
-        this.run(this._state)
-    },
-
     
-
-
     run() {
         console.log("Test");
     },

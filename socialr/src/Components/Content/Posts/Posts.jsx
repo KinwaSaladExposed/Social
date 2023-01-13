@@ -1,6 +1,7 @@
 import React from 'react'
 import OP from '../Main/OnePost'
 import arnold2 from '../../../img/pparnold.jpg'
+import {postChange_AC, addPost_AC} from '../../../Data/ContentReducer.js'
 
 let PText = React.createRef();
 

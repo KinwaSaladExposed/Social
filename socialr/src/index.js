@@ -15,9 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <App 
       state={state}
       dispatch={store.dispatch.bind(store)}
-      postMsg={store.postMsg.bind(store)}
-      
-      NM={store.NM.bind(store)}
+
     />
   </React.StrictMode>
 );

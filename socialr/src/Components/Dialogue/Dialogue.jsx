@@ -7,12 +7,11 @@ let MText = React.createRef();
 
 const Dialogue=(props)=> {
 	let sendMsg = () => {
-		let MMtext = MText.current.value;
-		props.postMsg(MMtext);
+		props.dispatch({type:'msg-change', text:MText.current.value});
 	}
 
 	let postMsg = () => {
-		props.NM(MText.current.value);
+		props.dispatch({type:'add-msg'});
 	}
 	return(
 		<div className="da">
